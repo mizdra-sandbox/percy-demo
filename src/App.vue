@@ -9,7 +9,7 @@ import HelloWorld from './components/HelloWorld.vue'
   <HelloWorld msg="Hello Vue 3 + Vite" />
   <details>
     <summary>パカパカするやつ</summary>
-    (●’∇’)ﾊﾛｰ♪
+    (●’∇’)ﾊﾛｰ
 </details>
 </template>
 
