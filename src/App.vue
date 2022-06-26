@@ -7,6 +7,10 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + Vite" />
+  <details>
+    <summary>パカパカするやつ</summary>
+    (●’∇’)ﾊﾛｰ♪
+</details>
 </template>
 
 <style>
