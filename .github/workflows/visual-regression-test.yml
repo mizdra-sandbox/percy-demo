@@ -16,11 +16,21 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14.x'
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          # Only install what we need to run the client in-action and tests against it
+          # format:    `--filter <packagename>...`
+          run_install: |
+            - args: [--filter myclient... --filter cypress-tests...]
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: yarn dev
+          install: false
+          start: pnpm dev
           wait-on: 'http://localhost:3000/'
-          command-prefix: 'percy exec -- yarn'
+          command-prefix: 'percy exec -- pnpm exec'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
